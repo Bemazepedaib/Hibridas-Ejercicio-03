@@ -150,7 +150,7 @@
     <ion-button expand="block" color="primary" (click)="searchStudent()">
       <ion-icon name="search"></ion-icon>
     </ion-button>
-    <ion-button expand="block" color="secondary" (click)="addStudent()" *ngIf="myForm.valid">
+    <ion-button expand="block" color="secondary" (click)="addStudent()" *ngIf="myForm.valid && searched==false">
       <ion-icon name="add"></ion-icon>
     </ion-button>
     <ion-button expand="block" color="tertiary" (click)="updateStudent()" *ngIf="searched==true">
