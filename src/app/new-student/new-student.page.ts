@@ -29,6 +29,7 @@ export class NewStudentPage implements OnInit {
         toast.present();
         this.myForm.reset();
       } else {
+        this.myForm.controls['controlNumber'].disable();
         this.myForm.controls['name'].setValue(st.name);
         this.myForm.controls['curp'].setValue(st.curp);
         this.myForm.controls['edad'].setValue(st.age);
@@ -98,6 +99,7 @@ export class NewStudentPage implements OnInit {
         duration: 2000
       });
       toast.present();
+      this.myForm.controls['controlNumber'].enable();
       this.searched = false;
     } else {
       let toast = await this.tc.create({

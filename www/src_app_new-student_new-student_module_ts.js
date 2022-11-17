@@ -126,6 +126,7 @@ let NewStudentPage = class NewStudentPage {
                     this.myForm.reset();
                 }
                 else {
+                    this.myForm.controls['controlNumber'].disable();
                     this.myForm.controls['name'].setValue(st.name);
                     this.myForm.controls['curp'].setValue(st.curp);
                     this.myForm.controls['edad'].setValue(st.age);
@@ -198,6 +199,7 @@ let NewStudentPage = class NewStudentPage {
                     duration: 2000
                 });
                 toast.present();
+                this.myForm.controls['controlNumber'].enable();
                 this.searched = false;
             }
             else {
