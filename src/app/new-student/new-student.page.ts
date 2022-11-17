@@ -14,12 +14,10 @@ export class NewStudentPage implements OnInit {
   public myForm: FormGroup;
   public validationMessages: Object;
   public searched: Boolean = false;
-  public valid: Boolean = false;
 
   constructor(private studentService: StudentService, private fb: FormBuilder, private tc: ToastController) { }
 
   async searchStudent() {
-    console.log(this.myForm.controls['controlNumber'].valid)
     if (this.myForm.controls['controlNumber'].valid) {
       let st: Student;
       st = this.studentService.getStudentByControlNumber(this.myForm.get('controlNumber').value)
@@ -155,9 +153,9 @@ export class NewStudentPage implements OnInit {
         { type: 'pattern', message: "El correo está mal formado" }
       ],
       'career': [
-        { type: 'required', message: "Elige una carrera"},
-        { type: 'minLength', message: "Elige una carrera"},
-        { type: 'maxLength', message: "Elige una carrera"}
+        { type: 'required', message: "Elige una carrera" },
+        { type: 'minLength', message: "Elige una carrera" },
+        { type: 'maxLength', message: "Elige una carrera" }
       ],
       'photo': [
         { type: 'required', message: "foto obligatoria" },

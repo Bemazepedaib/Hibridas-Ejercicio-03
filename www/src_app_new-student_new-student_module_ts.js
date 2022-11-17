@@ -111,11 +111,9 @@ let NewStudentPage = class NewStudentPage {
         this.fb = fb;
         this.tc = tc;
         this.searched = false;
-        this.valid = false;
     }
     searchStudent() {
         return (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, function* () {
-            console.log(this.myForm.controls['controlNumber'].valid);
             if (this.myForm.controls['controlNumber'].valid) {
                 let st;
                 st = this.studentService.getStudentByControlNumber(this.myForm.get('controlNumber').value);
